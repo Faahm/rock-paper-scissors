@@ -1,0 +1,39 @@
+.element {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.playerAndComputer {
+  display: inline-block;
+}
+
+.player {
+  display: inline-block;
+}
+
+.computer {
+  display: inline-block;
+}
+
+.static-container {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.enemy {
+  width: auto;
+  height: 700px;
+}
+
+.hero {
+  width: auto;
+  height: 500px;
+}

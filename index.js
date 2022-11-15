@@ -1,44 +1,43 @@
 function getComputerChoice() {
-    let choice = '';
-    switch (Math.floor(Math.random() * 3) + 1) {
-        case 1:
-            choice = 'rock';
-            break;
-        case 2:
-            choice = 'paper';
-            break;
-        case 3:
-            choice = 'scissors'
-            break;
-    }
-    return choice;
+  let choice = "";
+  switch (Math.floor(Math.random() * 3) + 1) {
+    case 1:
+      choice = "cryo";
+      break;
+    case 2:
+      choice = "hydro";
+      break;
+    case 3:
+      choice = "pyro";
+      break;
+  }
+  return choice;
 }
 
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection == computerSelection) {
-        return "It's a tie!";
-    }
-    else if (playerSelection == 'rock' && computerSelection == 'paper') {
-        return `You lose! ${computerSelection} beats ${playerSelection}`
-    }
-    else if ((playerSelection == 'paper' && computerSelection == 'scissors')) {
-        return `You lose! ${computerSelection} beats ${playerSelection}`
-    }
-    else if ((playerSelection == 'scissors' && computerSelection == 'rock')) {
-        return `You lose! ${computerSelection} beats ${playerSelection}`
-    }
-    else {
-        return `You win! ${playerSelection} beats ${computerSelection}`
-    }
+let computerScore = 0;
+let playerScore = 0;
+const resultP = document.createElement("p");
+
+function playRound(e) {
+  let matchResult = "";
+  const computerSelection = getComputerChoice();
+  const playerSelection = e.target.id;
+  if (playerSelection == computerSelection) {
+    matchResult = "It's a tie!";
+  } else if (playerSelection == "cryo" && computerSelection == "pyro") {
+    matchResult = `You lose! ${computerSelection} beats ${playerSelection}`;
+  } else if (playerSelection == "pyro" && computerSelection == "hydro") {
+    matchResult = `You lose! ${computerSelection} beats ${playerSelection}`;
+  } else if (playerSelection == "hydro" && computerSelection == "cryo") {
+    matchResult = `You lose! ${computerSelection} beats ${playerSelection}`;
+  } else {
+    matchResult = `You win! ${playerSelection} beats ${computerSelection}`;
   }
 
-  function game() {
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
-        const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-        playRound(playerSelection, computerSelection)
-     }
-  }
+  const domContainer = document.querySelector("#dom-container");
+  resultP.textContent = matchResult;
+  domContainer.appendChild(resultP);
+}
 
-  game();
+const elements = Array.from(document.querySelectorAll(".element"));
+elements.forEach((element) => element.addEventListener("click", playRound));

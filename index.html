@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <script src="index.js">
-        game();
-    </script>
-</body>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <!-- cryo beats hydro, hydro beats pyro, pyro beats cryo -->
+    <div class="static-container">
+      <!-- <img src="Character_Traveler_Male_Game.webp" class="hero" /> -->
+      <div class="elements">
+        <img src="Element_Cryo.png" class="element" id="cryo" />
+        <div class="bottom-elements">
+          <img src="Element_Hydro.png" class="element" id="hydro" />
+          <img src="Element_Pyro.png" class="element" id="pyro" />
+        </div>
+      </div>
+      <!-- <img src="Enemy_Abyss_Lector_Violet_Lightning.webp" class="enemy" /> -->
+    </div>
+
+    <div id="dom-container">
+      <div class="playerAndComputer">
+        <div class="player">
+          <h1>You</h1>
+          <h1 id="playerScore">0</h1>
+        </div>
+      </div>
+      <div class="computer">
+        <h1>Computer</h1>
+        <h1 id="computerScore">0</h1>
+      </div>
+    </div>
+  </body>
 </html>
