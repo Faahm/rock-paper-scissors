@@ -2,13 +2,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 150px;
   background-image: url('Domain_Spiral_Abyss_Abyssal_Moon_Spire_waifu2x_art_noise3_scale_tta_1_waifu2x_art_noise3_scale_tta_1.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   color: white;
   font-size: 18px;
+  margin-top: 50px;
 }
 
 .element {
@@ -30,13 +30,20 @@ body {
 .player, .computer {
   display: inline-block;
   text-align: center;
-  margin: 5rem;
+  margin: 2rem;
 }
 
-.static-container, .dom-container {
+.static-container {
   display: flex;
   justify-content: center;
   gap: 5rem;
+}
+
+.dom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 .enemy {
